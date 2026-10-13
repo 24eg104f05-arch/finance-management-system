@@ -1,0 +1,22 @@
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# Environment & Secrets
+.env
+.env.production
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store

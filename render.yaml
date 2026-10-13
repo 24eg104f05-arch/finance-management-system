@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: finance-management-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_DATASOURCE_URL
+        sync: false # Set your Neon cloud PostgreSQL URL here
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false # Set your Google Gemini API key
+      - key: CORS_ALLOWED_ORIGINS
+        value: "http://localhost:5173,https://*.vercel.app"
