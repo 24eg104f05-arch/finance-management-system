@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "budgets", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"user_id", "category", "month", "year"})
+    @UniqueConstraint(columnNames = {"user_id", "category", "budget_month", "budget_year"})
 })
 public class Budget {
 
@@ -24,10 +24,10 @@ public class Budget {
     @Column(nullable = false, precision = 15, scale = 2)
     private BigDecimal monthlyLimit;
 
-    @Column(nullable = false)
+    @Column(name = "budget_month", nullable = false)
     private Integer month; // 1 to 12
 
-    @Column(nullable = false)
+    @Column(name = "budget_year", nullable = false)
     private Integer year;
 
     @Column(nullable = false, updatable = false)
